@@ -59,7 +59,7 @@ jobs:
         run: ${{ steps.pkgman.outputs.package_manager }} install
 
       - name: Generate
-        run: ${{ steps.pkgman.outputs.package_manager }} run build
+        run: cp ./module.mjs  ./node_modules/@nuxt/ui-pro/dist/module.mjs && ${{ steps.pkgman.outputs.package_manager }} run build
         env:
           NITRO_PRESET: github_pages
           NUXT_CONTENT_PREVIEW_API: https://api.nuxt.studio
